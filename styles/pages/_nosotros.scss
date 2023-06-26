@@ -1,0 +1,52 @@
+//***************************************************** NOSOTROS *****************************************************//
+
+.contenido-nosotros {
+    display:flex ;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: map-get($color, background-color);
+    padding: 100px 200px 100px 200px;
+
+    .contenido-nosotros-txt{
+        width: 50%;
+        padding: 0 50px 0 50px;
+        text-align: justify;
+    }
+
+    .contenido-nosotros-img{
+        width: 50%;
+        transform: scale(1);
+        transition:transform .4s ease ;
+
+        img{
+            height: 100%;
+            width: 100%;
+        }
+
+        &:hover{
+            transform: scale(1.2);
+            transition:transform .4s ease ;
+        }
+
+    }
+
+    
+}
+
+@media screen and (max-width: 850px) {
+    .contenido-nosotros {
+        flex-direction: column;
+        padding: 50px;
+
+        .contenido-nosotros-img {
+            margin-top: 50px;
+            width: 90%;
+        }
+        .contenido-nosotros-txt {
+            width: 100%;
+            padding: 0;
+        }
+
+    }
+}

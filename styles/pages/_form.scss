@@ -1,0 +1,32 @@
+//***************************************************** ENVIO FORMULARIO *****************************************************//
+
+.seccion-envio {
+    height: 600px;
+    background-color: map-get($color, background-color);
+    padding-top: 100px;
+
+    h1{
+        font-size: 250%;
+        text-align: center;
+    }
+
+    h2{
+        text-align: center;
+        font-size: 150%;
+    }
+
+    h3{
+        margin:20px ;
+        font-size: 400%;
+        text-align: center;
+        color:#478138
+    }
+
+    @media screen and (max-width: 1080px) {
+        .contenido-envio{
+            padding-top: 50px ;
+        }
+    
+    }
+
+}

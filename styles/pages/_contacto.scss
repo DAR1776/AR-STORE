@@ -1,0 +1,25 @@
+//***************************************************** CONTACTO *****************************************************//
+
+.seccion-contacto {
+    height: 650px;
+    background-color: map-get($color, background-color);
+
+    form{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        div{
+            margin-top: 15px;
+        }
+    }
+
+    a{
+        margin: 30px;
+        border-radius: 15px;
+        background-color: map-get($color, button-color);
+        color: white;
+        padding: 10px 30px 10px 30px;
+        text-decoration: none;
+    }
+
+}

@@ -1,0 +1,88 @@
+//***************************************************** PRODUCTOS *****************************************************//
+
+.seccion-productos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: map-get($color, background-color);
+    
+    h1{
+        margin: 50px 0 30px 0;
+        text-align: center;
+    }
+
+    .productos{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .producto {
+            background-color: #f3f3f1;
+            margin: 1vw 4vw 3vw 4vw;
+            
+            img{
+                width: 220px;
+                margin: 30px;    
+                transform: scale(1);
+                transition:transform .4s ease ;   
+
+                &:hover{
+                    transform: scale(1.1);
+                    transition:transform .4s ease ;
+                }
+
+            }
+
+            span{
+                text-align:center;
+                margin: 6% auto 9% auto;
+            }
+
+            button{
+                margin-bottom: 30px;
+                border-radius: 15px;
+                background-color: map-get($color, button-color);
+                color: map-get($color, background-color);
+                padding: 10px 30px 10px 30px;
+            }
+
+        }
+
+    }
+
+    .tabla-tallas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        margin-bottom: 50px;
+        text-align: center;
+        align-items: center;
+        background-color: #242424;
+
+        .box {
+            text-align: center;
+            font-size: 150%;
+            color:#f3f3f1;
+            padding: 30px;
+            border: 1px solid #ccc;
+        
+        }
+
+        .titulo{
+            background-color:#141414;
+            font-weight: 500;
+        }
+
+    }
+
+    @media screen and (max-width: 1080px) {
+        .productos {
+            flex-direction: column;
+        }
+        .tabla-tallas{
+            margin:50px 0 50px 0;
+        }
+    }
+
+}

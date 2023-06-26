@@ -1,0 +1,23 @@
+//***************************************************** BODY *****************************************************//
+
+body {
+    left: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, span, p {
+    color: map-get($color, font-color);
+}
+
+button {
+    margin-top: 30px;
+    background-color: map-get($color, button-color);
+    border-radius: 15px;
+    padding:10px;
+}
+
+button a{
+    text-decoration: none;
+    color: map-get($color, background-color);
+}

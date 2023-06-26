@@ -1,0 +1,19 @@
+//***************************************************** VALORES GLOBALES *****************************************************//
+
+@import "./globals/reset";
+@import "./globals/variables";
+@import "./globals/body";
+@import "./globals/clases";
+
+//***************************************************** VISTAS *****************************************************//
+
+@import "./views/menu";
+@import "./views/footer";
+
+//***************************************************** PAGES *****************************************************//
+
+@import "./pages/home";
+@import "./pages/nosotros";
+@import "./pages/productos";
+@import "./pages/contacto";
+@import "./pages/form";
