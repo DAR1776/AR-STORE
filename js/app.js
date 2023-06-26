@@ -23,6 +23,8 @@ const producto3 = new Producto ("Goddess Revolution", 45)
 
 let carrito = []
 
+let compraTotal = 0
+
 
 btnProducto1.addEventListener('click', function() {
     agregarProducto(producto1)
@@ -48,9 +50,10 @@ btnCancelarCompra.addEventListener('click', function(){
     else{
         Swal.fire(
             'Compra Exitosa',
-            'Gracias por cancelar tu compra',
+            'Se ha completado su compra con exito',
             'success'
           )
+        borrartabla()
     }
 
 })
@@ -61,10 +64,11 @@ function agregarProducto(producto){
     if (carrito.includes(producto)){
         producto.unidades++;
         producto.total = producto.unidades * producto.precio
+        compraTotal + producto.precio
     }
     else{
         carrito.push(producto);
-
+        compraTotal + producto.precio
     }
     }
     
@@ -85,7 +89,7 @@ function mostrarTabla (){
     
         celdaProducto.innerHTML = lista[i].nombre;
         celdaUnidades.innerHTML = lista[i].unidades;
-        celdaPrecio.innerHTML = `$${lista[i].total } `;
+        celdaPrecio.innerHTML = `$${compraTotal} `;
       } 
       console.log(lista);
 }
