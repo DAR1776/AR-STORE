@@ -16,6 +16,7 @@ h1, h2, h3, h4, span, p {
 button {
   margin-top: 30px;
   background-color: #2F3434;
+  color: #dbdbcf;
   border-radius: 15px;
   padding: 10px;
 }
@@ -200,6 +201,12 @@ footer .footer-icons img {
 .seccion-productos .tabla-tallas .titulo {
   background-color: #141414;
   font-weight: 500;
+}
+.seccion-productos .Carrito {
+  text-align: center;
+}
+.seccion-productos .Carrito #btnCancelarCompra {
+  margin-bottom: 20px;
 }
 @media screen and (max-width: 1080px) {
   .seccion-productos .productos {

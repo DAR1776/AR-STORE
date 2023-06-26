@@ -76,6 +76,15 @@
 
     }
 
+    .Carrito {
+        text-align: center;
+        #btnCancelarCompra{
+            margin-bottom: 20px;
+        }
+
+    }
+
+
     @media screen and (max-width: 1080px) {
         .productos {
             flex-direction: column;

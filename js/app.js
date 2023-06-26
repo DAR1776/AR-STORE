@@ -5,6 +5,8 @@ btnProducto1 = document.querySelector("#btnProducto1")
 btnProducto2 = document.querySelector("#btnProducto2")
 btnProducto3 = document.querySelector("#btnProducto3")
 
+btnCancelarCompra = document.querySelector("#btnCancelarCompra")
+
 class Producto {
     constructor(nombre,precio){
         this.nombre = nombre
@@ -34,6 +36,24 @@ btnProducto3.addEventListener('click', function() {
     agregarProducto(producto3)
     mostrarTabla()
 });
+
+btnCancelarCompra.addEventListener('click', function(){
+    if (carrito.length == 0){
+        Swal.fire(
+            'Tu carrito esta vacio',
+            'Agraga algo a tu carrito para cancelar la compra',
+            'error'
+          )
+    }
+    else{
+        Swal.fire(
+            'Compra Exitosa',
+            'Gracias por cancelar tu compra',
+            'success'
+          )
+    }
+
+})
 
 function agregarProducto(producto){
     console.log("Click");
