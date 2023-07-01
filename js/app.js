@@ -5,41 +5,42 @@ btnProducto1 = document.querySelector("#btnProducto1")
 btnProducto2 = document.querySelector("#btnProducto2")
 btnProducto3 = document.querySelector("#btnProducto3")
 
-btnCancelarCompra = document.querySelector("#btnCancelarCompra")
+btnPagarCompra = document.querySelector("#btnPagarCompra")
 
-class Producto {
-    constructor(nombre,precio){
-        this.nombre = nombre
-        this.unidades = 1
-        this.precio = precio
-        this.total = precio
+let catalogo = []
+/*
+fetch('../js/data.json')
+    .then((response) => response.json())
+    .then((responseJs) => {
+        catalogo = responseJs
+        console.log(catalogo) 
     }
-
+)
+*/
+const pedirCatalogo = async()=> {
+    const respuesta = await fetch('../js/data.json')
+    catalogo = await respuesta.json()
+    console.log(catalogo)
 }
 
-const producto1 = new Producto ("Long Live The King", 40)
-const producto2 = new Producto ("Revolution MMXXIII", 55)
-const producto3 = new Producto ("Goddess Revolution", 45)
+pedirCatalogo()
 
 let carrito = []
 
-let compraTotal = 0
-
-
 btnProducto1.addEventListener('click', function() {
-    agregarProducto(producto1)
+    agregarProducto(catalogo[0])
     mostrarTabla()
 });
 btnProducto2.addEventListener('click', function() {
-    agregarProducto(producto2)
+    agregarProducto(catalogo[1])
     mostrarTabla()
 });
 btnProducto3.addEventListener('click', function() {
-    agregarProducto(producto3)
+    agregarProducto(catalogo[2])
     mostrarTabla()
 });
 
-btnCancelarCompra.addEventListener('click', function(){
+btnPagarCompra.addEventListener('click', function(){
     if (carrito.length == 0){
         Swal.fire(
             'Tu carrito esta vacio',
@@ -64,13 +65,11 @@ function agregarProducto(producto){
     if (carrito.includes(producto)){
         producto.unidades++;
         producto.total = producto.unidades * producto.precio
-        compraTotal + producto.precio
     }
     else{
         carrito.push(producto);
-        compraTotal + producto.precio
     }
-    }
+}
     
 function mostrarTabla (){
     borrartabla();
@@ -89,11 +88,10 @@ function mostrarTabla (){
     
         celdaProducto.innerHTML = lista[i].nombre;
         celdaUnidades.innerHTML = lista[i].unidades;
-        celdaPrecio.innerHTML = `$${compraTotal} `;
+        celdaPrecio.innerHTML = `$${lista[i].total} `;
       } 
       console.log(lista);
 }
-
 
 function borrartabla(){
     let filas = tabla.rows.length;

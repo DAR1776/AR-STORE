@@ -1,6 +1,6 @@
 
 [
-    {"nombre": "Long Live The King", "precio":40 , "id":1},
-    {"nombre": "Revolution MMXXIII", "precio":55 , "id":2},
-    {"nombre": "Goddess Revolution", "precio":45 , "id":3}
+    {"nombre": "Long Live The King", "precio":40 , "id":1 , "unidades":1 , "total":40},
+    {"nombre": "Revolution MMXXIII", "precio":55 , "id":2 , "unidades":1 , "total":55},
+    {"nombre": "Goddess Revolution", "precio":45 , "id":3 , "unidades":1 , "total":45}
 ]
