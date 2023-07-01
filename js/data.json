@@ -1,4 +1,6 @@
 
 [
-    
+    {"nombre": "Long Live The King", "precio":40 , "id":1},
+    {"nombre": "Revolution MMXXIII", "precio":55 , "id":2},
+    {"nombre": "Goddess Revolution", "precio":45 , "id":3}
 ]

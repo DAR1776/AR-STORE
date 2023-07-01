@@ -101,4 +101,4 @@ function borrartabla(){
     for (var i = 1; i < filas; i++) {
         tabla.deleteRow(1);
       } 
-}
+}  
