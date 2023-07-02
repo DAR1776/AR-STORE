@@ -1,4 +1,4 @@
-//PRODUCTOS
+
 const tabla = document.querySelector(".table")
 
 btnProducto1 = document.querySelector("#btnProducto1")
