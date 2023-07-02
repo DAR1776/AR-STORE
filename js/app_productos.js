@@ -1,4 +1,4 @@
-
+//PRODUCTOS
 const tabla = document.querySelector(".table")
 
 btnProducto1 = document.querySelector("#btnProducto1")
@@ -7,16 +7,10 @@ btnProducto3 = document.querySelector("#btnProducto3")
 
 btnPagarCompra = document.querySelector("#btnPagarCompra")
 
+let carrito = []
+
 let catalogo = []
-/*
-fetch('../js/data.json')
-    .then((response) => response.json())
-    .then((responseJs) => {
-        catalogo = responseJs
-        console.log(catalogo) 
-    }
-)
-*/
+
 const pedirCatalogo = async()=> {
     const respuesta = await fetch('../js/data.json')
     catalogo = await respuesta.json()
@@ -25,7 +19,6 @@ const pedirCatalogo = async()=> {
 
 pedirCatalogo()
 
-let carrito = []
 
 btnProducto1.addEventListener('click', function() {
     agregarProducto(catalogo[0])
@@ -100,3 +93,28 @@ function borrartabla(){
         tabla.deleteRow(1);
       } 
 }  
+
+//FORM
+
+let btnEnviarFormulario = document.querySelector("#btnEnviarFormulario")
+
+function enviarForm() {
+
+    let inputName = document.querySelector("#inputName")
+    let inputComment = document.querySelector("#inputComment")
+    let inputEmail = document.querySelector("#inputEmail")
+
+    const inputNameStr = JSON.stringify(inputName)
+    const inputCommentStr = JSON.stringify(inputComment)
+    const inputEmailStr = JSON.stringify(inputEmail)
+
+    localStorage.setItem("inputName", inputNameStr)
+    localStorage.setItem("inputComment", inputCommentStr)
+    localStorage.setItem("inputEmail", inputEmailStr)
+}
+
+btnEnviarFormulario.addEventListener('click', function() {
+    enviarForm()
+});
+
+
